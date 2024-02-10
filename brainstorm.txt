@@ -1,0 +1,70 @@
+📁 theme
+  📄 index.js
+  📄 styles.js
+  📁 foundations
+    📄 borders.js
+    📄 typography.js
+    📄 spacing.js
+    📄 shadows.js
+  📁 components
+    📄 button.js
+    📄 input.js
+    📄 navbar.js
+    📄 card.js
+    📄 avatar.js
+    📄 modal.js
+  📁 animations
+    📄 fadeIn.js
+    📄 slideIn.js
+    📄 rotate.js
+    📄 pulse.js
+
+- Use react-router to navigate between pages
+- Use localstorage to store the previous animations
+- Each page content will be in separate page/folder and will probably define therie left and top positions in each page
+- Each page component initial is 0 opacity then 1 opacity after the page is loaded
+- Except home page that enters from left and exit to right, all other pages will enter from right and exit to left
+
+
+const animationSequence = {
+    initial: {
+      transform: prevWhiteStrapAnimation?.transform,
+      left: prevWhiteStrapAnimation?.left,
+      top: prevWhiteStrapAnimation?.top,
+    },
+    animate: [
+      {
+        transform: whiteStrapAnimation?.transform,
+        left: whiteStrapAnimation?.left,
+        top: whiteStrapAnimation?.top,
+        transition: { duration: 5, type: "linear" },
+      },
+      {
+        transform: "rotate(360deg)",
+        transition: { duration: 5, type: "linear" },
+      },
+    ],
+  };
+
+  return (
+    <motion.div {...animationSequence}>
+      <ChakraBox
+        h={"full"}
+        position={"relative"}
+      >
+        <Strap />
+      </ChakraBox>
+    </motion.div>
+  );
+
+
+let currentSize = 340;
+const targetSize = 1000;
+const increments = 5;
+
+const incrementSize = (targetSize - currentSize) / increments;
+
+for (let i = 0; i < increments; i++) {
+  currentSize += incrementSize;
+  console.log(`${Math.round(currentSize)}px`);
+}
