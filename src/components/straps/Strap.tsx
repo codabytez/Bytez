@@ -43,7 +43,7 @@ const Strap: FC<{ theme?: "light" | "dark" }> = ({ theme = "light" }) => {
       w={"1105.009px"}
       display={"flex"}
       h={"77px"}
-      shadow={colorMode === "dark" && "strap"}
+      shadow={colorMode === "dark" ? "strap" : "none"}
       variants={strapVariants}
       overflow={"hidden"}
     >
