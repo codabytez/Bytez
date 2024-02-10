@@ -59,3 +59,11 @@ interface Project {
 interface ProjectProps {
   project: Project;
 }
+
+interface DocumentTitleProps {
+  title: string;
+}
+
+interface DocumentDescriptionProps {
+  description: string;
+}

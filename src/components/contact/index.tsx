@@ -2,6 +2,8 @@ import { FC } from "react";
 import Layout from "../../Layout";
 import { Heading, Link, useColorMode } from "@chakra-ui/react";
 import { ChakraBox, ChakraSvg } from "../../customchakra";
+import { DocumentDescription, DocumentTitle } from "../seo";
+
 
 const contact = [
   {
@@ -43,6 +45,9 @@ const Contact: FC = () => {
   };
 
   return (
+    <>
+    <DocumentTitle title="Contact me" />
+      <DocumentDescription description="Want to get in touch?!!" />
     <Layout>
       <ChakraBox
         display={"flex"}
@@ -147,6 +152,7 @@ const Contact: FC = () => {
         </ChakraBox>
       </ChakraBox>
     </Layout>
+    </>
   );
 };
 
